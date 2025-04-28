@@ -2,19 +2,26 @@
 
 ## Overview
 
-Wrangled react GE/LC data is saved here, as a list object:
+Wrangled react GE/LC data is saved in the REACT enclave, as a list object:
 
 ```
-E:/shared_working_folder/saved_objects/ge_lc_wrangled.rds
+E:/shared_working_folder/saved_objects/ge_lc/ge_lc_wrangled.rds
 ```
+
+Rather than creating one huge 'master' data frame, the [individual data sources](#data-sources) are saved as named elements in the list object, and can be joined as required with the `subject_id` variable – a unique participant identifier.
+
+Any time a new export of the data is created (by running 00_data_extract_sql_clean.R), the old version is moved to an archive folder (```E:/shared_working_folder/saved_objects/ge_lc/archive```), and a log of the new export is recorded in ```E:/shared_working_folder/saved_objects/ge_lc/ge_lc_wrangled_versions.csv```.
 
 **Note:** All cross-dataset joining should be done using `subject_id`. This is a unique identifier. Other identifiers (e.g. `u_password`) may have different values for the same individual if they attended baseline clinic twice in error (although instances like this should have been de-duped).
 
 **Note:** In the GE clinical data, there are multiple versions of height, weight, waist and grip strength. These include `_value`, `_integervalue` and `_decimal value` versions. The reason is that GE switched the way they recorded data half way through. So we either have integer+decimal values (which need to be combined), or we have a standard value. Hence the `ifelse` logic in the clinic wrangling function. If one is `NA`, the other should be present.
 
+
+### Data sources
+
 Data in the list are:
 
-- **registration_data:** Short survey that all participants filled out on registration. Contains COVID symptom information (including long COVID designation), plus age group and sex. N = 13,452.
+- **registration_data:** Short survey that all participants filled out on registration. Contains COVID symptom information (including long COVID designation), plus age group and sex. N = 13,454.
 - **clinic_data:**
   - **clinical_tests:** Physical in-clinic health tests e.g. sit to stand, grip test, FEV, etc.
     - T0 = baseline (N = 10,790)
@@ -22,7 +29,7 @@ Data in the list are:
   - **assay:** Blood data (BP, HDL, LDL, etc).
     - T0 = baseline (N = 10,790)
     - T1 = follow-up (N = 2,120)
-  - **illumina:** Information on Illumina status for each participant.
+  - **illumina:** Illumina metadata for each participant.
     - T0 = baseline (N = 10,997)
     - T1 = follow-up (N = 2,120)
 - **health_survey:** Extensive questionnaire completed by participants at or before clinical visit.
@@ -93,6 +100,15 @@ A list of all new columns created throughout the data extraction and cleaning pr
 
 - **`lc_categorical`**: Categorical Long COVID designation ("Asymptomatic", "Non-persistent symptoms", "Long COVID"), defined by symptom persistence and counts.
 - **`lc_binary`**: Binary flag (1 = Long COVID; 0 = all other categories).
+
+
+## Long COVID designation
+
+The top-level definition of long COVID is whether a person experienced one or more symptoms for 12 weeks or longer. This information is derived from the registration survey (all surveys are saved here: https://www.imperial.ac.uk/medicine/research-and-impact/groups/react-study/studies/react-long-covid/react-long-covid-materials/).
+
+The question logic is visualised in the flow chart below:
+
+![Alt text](https://github.com/mathzero/react_gelc_bio_cohort/blob/main/GE_LC%20long%20covid%20designation%20logic%20(2).png "Long COVID designation")
 
 ## Data Extract Script Notes
 
