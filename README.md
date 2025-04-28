@@ -21,7 +21,7 @@ Any time a new export of the data is created (by running 00_data_extract_sql_cle
 
 Data in the list are:
 
-- **registration_data:** Short survey that all participants filled out on registration. Contains COVID symptom information (including long COVID designation), plus age group and sex. N = 13,454.
+- **registration_data:** Short survey that all participants filled out on registration. Contains COVID symptom information (used for deriving long COVID designation), plus age group and sex. N = 13,454.
 - **clinic_data:**
   - **clinical_tests:** Physical in-clinic health tests e.g. sit to stand, grip test, FEV, etc.
     - T0 = baseline (N = 10,790)
