@@ -146,10 +146,10 @@ This script extracts, cleans, and assembles REACT GE/LC data from an SQL databas
    - `df_assay`: raw assay results.
    - `df_assay_1`: baseline assay deduplicated by missingness.
    - `df_assay_2`: follow-up assay.
-7. **Illumina Data**
+7. **Illumina Metadata (genome/transcriptome)**
    - `df_illumina`: raw sample barcode data.
-   - `df_illumina_1`: baseline Illumina results.
-   - `df_illumina_2`: follow-up Illumina results.
+   - `df_illumina_1`: baseline Illumina metadata.
+   - `df_illumina_2`: follow-up Illumina metadata.
 8. **Surveys**
    - `df_survey`: cleaned survey responses (first per subject).
    - `df_survey_2`: recall survey data.
