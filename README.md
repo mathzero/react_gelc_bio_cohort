@@ -24,13 +24,13 @@ Data in the list are:
 - **registration_data:** Short survey that all participants filled out on registration. Contains COVID symptom information (used for deriving long COVID designation), plus age group and sex. N = 13,454.
 - **clinic_data:**
   - **clinical_tests:** Physical in-clinic health tests e.g. sit to stand, grip test, FEV, etc.
-    - T0 = baseline (N = 10,790)
+    - T0 = baseline (N = 10,798)
     - T1 = follow-up (N = 2,325)
   - **assay:** Blood data (BP, HDL, LDL, etc).
-    - T0 = baseline (N = 10,790)
-    - T1 = follow-up (N = 2,120)
+    - T0 = baseline (N = 10,793)
+    - T1 = follow-up (N = 2,075)
   - **illumina:** Illumina metadata for each participant.
-    - T0 = baseline (N = 10,997)
+    - T0 = baseline (N = 10,807)
     - T1 = follow-up (N = 2,120)
 - **health_survey:** Extensive questionnaire completed by participants at or before clinical visit.
   - **Note:** for various reasons, a large number of people did not complete the health survey.
