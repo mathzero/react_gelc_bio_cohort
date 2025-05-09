@@ -127,7 +127,7 @@ This script extracts, cleans, and assembles REACT GE/LC data from an SQL databas
 2. **Database Connection**
    - `con`: ODBC connection to the REACT Oracle database.
 3. **Table Extraction Helper**
-   - `extractTable(tabname)`: queries the given table name and returns a data frame with a message.
+   - `extractTable(tabname)`: queries the given table name and returns a data frame.
 4. **Registration Data**
    - **GE registration** (`df_ge_reg`, `df_ge_reg_symps`)
      - cleaned and deduplicated GE registration records.
