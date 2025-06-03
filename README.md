@@ -5,12 +5,12 @@
 Wrangled react GE/LC data is saved in the REACT enclave, as a list object:
 
 ```
-E:/shared_working_folder/saved_objects/ge_lc/ge_lc_wrangled.rds
+G:/shared_working_folder/saved_objects/ge_lc/ge_lc_wrangled.rds
 ```
 
 Rather than creating one huge 'master' data frame, the [individual data sources](#data-sources) are saved as named elements in the list object, and can be joined as required with the `subject_id` variable – a unique participant identifier.
 
-Any time a new export of the data is created (by running 00_data_extract_sql_clean.R), the old version is moved to an archive folder (```E:/shared_working_folder/saved_objects/ge_lc/archive```), and a log of the new export is recorded in ```E:/shared_working_folder/saved_objects/ge_lc/ge_lc_wrangled_versions.csv```.
+Any time a new export of the data is created (by running 00_data_extract_sql_clean.R), the old version is moved to an archive folder (```G:/shared_working_folder/saved_objects/ge_lc/archive```), and a log of the new export is recorded in ```G:/shared_working_folder/saved_objects/ge_lc/ge_lc_wrangled_versions.csv```.
 
 **Note:** All cross-dataset joining should be done using `subject_id`. This is a unique identifier. Other identifiers (e.g. `u_password`) may have different values for the same individual if they attended baseline clinic twice in error (although instances like this should have been de-duped).
 
