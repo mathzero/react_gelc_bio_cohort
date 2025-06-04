@@ -26,7 +26,7 @@ Data in the list are:
   - **clinical_tests:** Physical in-clinic health tests e.g. sit to stand, grip test, FEV, etc.
     - T0 = baseline (N = 10,798)
     - T1 = follow-up (N = 2,325)
-  - **assay:** Blood data (BP, HDL, LDL, etc).
+  - **assay:** Blood draw metadata (useful for OMICs analysis), plus simple bloods: (BP, HDL, LDL, etc).
     - T0 = baseline (N = 10,793)
     - T1 = follow-up (N = 2,075)
   - **illumina:** Illumina metadata for each participant.
@@ -96,7 +96,7 @@ A list of all new columns created throughout the data extraction and cleaning pr
 
 - **`date_of_survey`**: Date part of the survey timestamp (`datetime` field).
 
-### Long Covid Designation
+### 'Ever' Long Covid Designation
 
 - **`lc_categorical`**: Categorical Long COVID designation ("Asymptomatic", "Non-persistent symptoms", "Long COVID"), defined by symptom persistence and counts.
 - **`lc_binary`**: Binary flag (1 = Long COVID; 0 = all other categories).
@@ -104,7 +104,14 @@ A list of all new columns created throughout the data extraction and cleaning pr
 
 ## Long COVID designation
 
-The top-level definition of long COVID is whether a person experienced one or more symptoms for 12 weeks or longer. This information is derived from the registration survey (all surveys are saved here: https://www.imperial.ac.uk/medicine/research-and-impact/groups/react-study/studies/react-long-covid/react-long-covid-materials/).
+We can derive two definitions of long COVID from the data. First is 'ever' long COVID – did the participant experience ongoing symptoms for 12 weeks or more after their COVID-19 infection (regardless of whether the symptoms are now resolved). A description of the logic for deriving this status is [below](#ever-long-covid).
+
+The second is 'current' long COVID – is the participant *still* experiencing symptoms from their COVID-19 infection (which was by design more than 12 weeks before the sampling date). This status is easily derived from the 'covrecov' question in the health survey data from both baseline and follow-up.
+
+
+### Ever Long COVID 
+
+The top-level definition of 'ever' long COVID is whether a person experienced one or more symptoms for 12 weeks or longer. This information is derived from the registration survey (all surveys are saved here: https://www.imperial.ac.uk/medicine/research-and-impact/groups/react-study/studies/react-long-covid/react-long-covid-materials/).
 
 The question logic is visualised in the flow chart below:
 
