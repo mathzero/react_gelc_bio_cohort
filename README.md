@@ -1,6 +1,13 @@
-# REACT GE/LC Data Wrangling
+# REACT GE/LC Participant Metadata
 
 ## Overview
+The REACT GE/LC biological cohort is an arm of the [REACT Long COVID study](https://www.imperial.ac.uk/medicine/research-and-impact/groups/react-study/studies/react-long-covid/), focused on investigating biological factors, and carried out in collaboration with Genomics England.
+
+Participants attended an assessment clinic where clinical measurements and biological samples were collected. Blood biomarkers from a range of platforms (Whole Genome, transcriptomics, proteomics, metabolomics, blood lipids, etc) will be analysed and integrated as part of the study, to identify markers and putative biological mechanisms underpinning long COVID.
+
+Below, we summarise the patient metadata that is available to support the biomarker data.
+
+## Overview of metadata
 
 Wrangled react GE/LC data is saved in the REACT enclave, as a list object:
 
