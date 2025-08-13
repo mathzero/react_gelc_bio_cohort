@@ -9,7 +9,7 @@ We are interested in signals both of current long COVID status and of 'ever' Lon
 | Experienced one or more symptoms for 12 weeks or more         | `lc_binary`     | registration (registration_data)      | All registrants (13,454) |
 | Not currently recovered from COVID-19 (baseline)              | `covrecov`      | health survey (health_survey$survey_t0) | 10,066                 |
 | Not currently recovered from COVID-19 (follow-up)             | `covrecov`      | health survey (health_survey$survey_t1) | 2,075                  |
-| Symptom-specific Long COVID status                            | `sympttime_`    | health survey t0 and t1                 | 10,066 +2,075          |
+| Symptom-specific Long COVID status (baseline + folow-up)      | `sympttime_`    | health survey t0 and t1                 | 10,066 +2,075          |
 
 
 
